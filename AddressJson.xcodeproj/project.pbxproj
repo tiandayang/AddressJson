@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0A1BB01FBC397100687B7D /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A1BAF1FBC397100687B7D /* address.json */; };
 		7E3CA7451FBAD2210071F0B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3CA7441FBAD2210071F0B2 /* AppDelegate.m */; };
 		7E3CA7481FBAD2210071F0B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3CA7471FBAD2210071F0B2 /* ViewController.m */; };
 		7E3CA74B1FBAD2210071F0B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3CA7491FBAD2210071F0B2 /* Main.storyboard */; };
 		7E3CA74D1FBAD2210071F0B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3CA74C1FBAD2210071F0B2 /* Assets.xcassets */; };
 		7E3CA7501FBAD2210071F0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3CA74E1FBAD2210071F0B2 /* LaunchScreen.storyboard */; };
 		7E3CA7531FBAD2210071F0B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3CA7521FBAD2210071F0B2 /* main.m */; };
-		7E3CA75A1FBAD3740071F0B2 /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E3CA7591FBAD3740071F0B2 /* address.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0A1BAF1FBC397100687B7D /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = address.json; path = ExcelToJson/address.json; sourceTree = SOURCE_ROOT; };
 		7E3CA7401FBAD2210071F0B2 /* AddressJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3CA7431FBAD2210071F0B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E3CA7441FBAD2210071F0B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		7E3CA74F1FBAD2210071F0B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E3CA7511FBAD2210071F0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3CA7521FBAD2210071F0B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7E3CA7591FBAD3740071F0B2 /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				7E3CA7441FBAD2210071F0B2 /* AppDelegate.m */,
 				7E3CA7461FBAD2210071F0B2 /* ViewController.h */,
 				7E3CA7471FBAD2210071F0B2 /* ViewController.m */,
-				7E3CA7591FBAD3740071F0B2 /* address.json */,
+				7E0A1BAF1FBC397100687B7D /* address.json */,
 				7E3CA7491FBAD2210071F0B2 /* Main.storyboard */,
 				7E3CA74C1FBAD2210071F0B2 /* Assets.xcassets */,
 				7E3CA74E1FBAD2210071F0B2 /* LaunchScreen.storyboard */,
@@ -134,7 +134,7 @@
 			files = (
 				7E3CA7501FBAD2210071F0B2 /* LaunchScreen.storyboard in Resources */,
 				7E3CA74D1FBAD2210071F0B2 /* Assets.xcassets in Resources */,
-				7E3CA75A1FBAD3740071F0B2 /* address.json in Resources */,
+				7E0A1BB01FBC397100687B7D /* address.json in Resources */,
 				7E3CA74B1FBAD2210071F0B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

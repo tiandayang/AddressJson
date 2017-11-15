@@ -27,7 +27,7 @@
 }
 - (IBAction)analysis:(id)sender {
 //    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/address.json"];
-#error 请把 ‘tianxiangyang’换成你们对应的用户名  修改完成 在模拟器运行点击解析，桌面就会生成一个json文件 就可以直接拿来用了
+//#error 请把 ‘tianxiangyang’换成你们对应的用户名  修改完成 在模拟器运行点击解析，桌面就会生成一个json文件 就可以直接拿来用了
     NSString *path = @"/Users/tianxiangyang/Desktop/address.json";
     NSLog(@"%@",path);
     _countryDic = [NSMutableDictionary dictionary];
@@ -35,12 +35,16 @@
     NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     if (array) {
         _dataArray = [self configData:[NSMutableArray arrayWithArray:array]];
-        NSMutableDictionary *resultDic = [NSMutableDictionary dictionary];
+//        NSMutableDictionary *resultDic = [NSMutableDictionary dictionary];
+        NSMutableArray *resultArray = [NSMutableArray array];
         [_countryDic.mutableCopy enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
             NSMutableArray *tempArray = [self cityDictionary:[self allCityInCountry:key]];
-            [resultDic setObject:tempArray forKey:key];
+            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+            [dic setObject:key forKey:@"name"];
+            [dic setObject:tempArray forKey:@"city"];
+            [resultArray addObject:dic];
         }];
-        NSString *jsonStr = [self dictionaryToJson:resultDic];
+        NSString *jsonStr = [self dictionaryToJson:@{@"data": resultArray}];
         [jsonStr writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }
 }
@@ -81,10 +85,9 @@
         for (NSArray *subArray in cityArray) {
             NSString *city = subArray[1];
             if ([city isEqualToString:obj]) {
-                NSDictionary *dic = @{@"name":subArray[2],@"country":@[]};
-                [townArray addObject:dic];
+                [townArray addObject:subArray[2]];
                 [cityDic setObject:obj forKey:@"name"];
-                [cityDic setObject:townArray forKey:@"city"];
+                [cityDic setObject:townArray forKey:@"country"];
             }
         }
         if (cityDic.count > 0) {
@@ -116,15 +119,15 @@
     }
     return array;
 }
-//某个一级下的所有内容
-- (NSMutableArray *)allCityInCountry:(NSString *)country
+//某个省下的所有城市
+- (NSMutableArray *)allCityInCountry:(NSString *)province
 {
     NSMutableArray *cityArray = [NSMutableArray array];
     NSMutableArray *cityNameArray = [NSMutableArray array];
     for (NSArray *array in _dataArray) {
         NSString *countryStr = array[0];
         NSString *city = array[1];
-        if ([countryStr isEqualToString:country]) {
+        if ([countryStr isEqualToString:province]) {
             [cityArray addObject:array];
         }
         if (![cityNameArray containsObject:city]) {
